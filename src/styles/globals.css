@@ -1,0 +1,171 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Default theme variables (light mode) */
+  :root {
+    --background: #ffffff; /* Light background */
+    --foreground: #1a1a1a; /* Dark text */
+    --card: #f7f7f7; /* Light card background */
+    --card-foreground: #1a1a1a; /* Dark text on cards */
+    --accent: #ff6f91; /* Darker pink accent */
+    --accent-foreground: #ffffff; /* Light text on accents */
+    --muted: #f0f0f0; /* Muted background */
+    --muted-foreground: #666666; /* Muted text color */
+    --border: #dddddd; /* Light border */
+    --ring: #ff6f91; /* Focus ring color */
+  }
+
+  /* Dark theme variables */
+  .dark {
+    --background: #1a1a1a; /* Dark background */
+    --foreground: #ffffff; /* Light text */
+    --card: #2a2a2a; /* Dark card background */
+    --card-foreground: #ffffff; /* Light text on cards */
+    --accent: #ff6f91; /* Dark pink accent */
+    --accent-foreground: #1a1a1a; /* Dark text on accents */
+    --muted: #2a2a2a; /* Muted background */
+    --muted-foreground: #aaaaaa; /* Muted text color */
+    --border: #444444; /* Dark border */
+    --ring: #ff6f91; /* Focus ring color */
+  }
+
+  /* Apply theme variables to Tailwind CSS classes */
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+  }
+
+  .bg-background {
+    background-color: var(--background);
+  }
+
+  .bg-card {
+    background-color: var(--card);
+  }
+
+  .text-foreground {
+    color: var(--foreground);
+  }
+
+  .text-muted-foreground {
+    color: var(--muted-foreground);
+  }
+
+  .bg-accent {
+    background-color: var(--accent);
+  }
+
+  .text-accent {
+    color: var(--accent);
+  }
+
+  .hover\\:bg-accent:hover {
+    background-color: var(--accent);
+  }
+
+  .hover\\:text-accent-foreground:hover {
+    color: var(--accent-foreground);
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Utility Classes for Animations */
+.animate-fadeIn {
+  animation: fadeIn 1s ease-in-out;
+}
+
+.animate-slideInLeft {
+  animation: slideInLeft 1s ease-in-out;
+}
+
+.animate-slideInRight {
+  animation: slideInRight 1s ease-in-out;
+}
+
+.animate-bounceIn {
+  animation: bounceIn 1.5s ease-in-out;
+}
+
+/* Additional Animation Classes for Hero Section */
+.animate-pulse {
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+}
+
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.bg-gradient-flow {
+  background: linear-gradient(90deg, var(--accent), #ff5e57, var(--foreground));
+  background-size: 300% 300%;
+  animation: gradientFlow 3s ease infinite;
+}
