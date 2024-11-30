@@ -8,6 +8,8 @@
 
 Welcome to my personal portfolio website! This modern, responsive web application showcases my projects, skills, and professional journey. Built with React and styled with Tailwind CSS, it features a clean design, smooth animations, and dark mode support.
 
+🔗 **Live Demo:** [https://priyanshi-gupta.vercel.app/](https://priyanshi-gupta.vercel.app/)
+
 ## ✨ Features
 
 - 🎨 Modern UI with Tailwind CSS
