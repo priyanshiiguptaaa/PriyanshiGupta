@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Github, Linkedin, Mail } from 'lucide-react';
+import { Github, Linkedin, Mail, Youtube } from 'lucide-react';
 import SocialButton from './SocialButton';
 import StatCard from './StatCard';
 
@@ -79,6 +79,20 @@ const Hero = () => {
                   label="Email"
                   className="hover:scale-105 transform transition-all duration-300 hover:shadow-lg"
                 />
+                <SocialButton
+                  href="https://www.youtube.com/@PriyanshiiGuptaa"
+                  icon={<Youtube className="w-5 h-5" />}
+                  label="YouTube"
+                  className="hover:scale-105 transform transition-all duration-300 hover:shadow-lg"
+                />
+                <a
+                  href="/PriyanshiGupta%20(2).pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-6 py-3 rounded-full bg-violet-700 dark:bg-purple-500 text-white font-semibold text-lg hover:bg-violet-800 dark:hover:bg-purple-600 transition-colors duration-300 hover:scale-105 transform hover:shadow-lg"
+                >
+                  View Resume
+                </a>
               </div>
             </div>
           </div>
