@@ -113,23 +113,23 @@ const Hero = () => {
               {/* Stats Grid */}
               <div className="grid grid-cols-2 gap-6 w-full">
                 <StatCard
-                  number="3+"
-                  label="Years of Experience"
+                  number="9.3"
+                  label="CGPA"
                   className="hover:scale-105 transform transition-all duration-300"
                 />
                 <StatCard
-                  number="20+"
+                  number="10"
                   label="Projects Completed"
                   className="hover:scale-105 transform transition-all duration-300"
                 />
                 <StatCard
-                  number="10+"
+                  number="6"
                   label="Technologies"
                   className="hover:scale-105 transform transition-all duration-300"
                 />
                 <StatCard
-                  number="100%"
-                  label="Client Satisfaction"
+                  number="10"
+                  label="Opportunities Finalist"
                   className="hover:scale-105 transform transition-all duration-300"
                 />
               </div>

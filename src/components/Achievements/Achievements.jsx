@@ -5,64 +5,88 @@ import { Trophy, Award, Star, Medal, Target, Crown, ExternalLink } from 'lucide-
 const Achievements = () => {
   const achievements = [
     {
-      icon: <Trophy className="w-6 h-6" />,
-      title: "Top 100 in Amazon's ML Challenge",
-      description: "Ranked among the top 100 participants in Amazon's Machine Learning Challenge 2023, showcasing expertise in ML algorithms and problem-solving.",
+      icon: <Award className="w-6 h-6" />,
+      title: "1st Place in Creaticon - Logo Designing Competition",
+      description: "Achieved 1st place in Creaticon, a logo designing competition organized by MLSAC BVCOE, showcasing creativity and design skills.",
       category: "Competition"
     },
     {
-      icon: <Award className="w-6 h-6" />,
-      title: "Winner at SheBuilds Hackathon",
-      description: "Led a team to victory at SheBuilds Hackathon with an innovative healthcare solution, demonstrating leadership and technical excellence.",
+      icon: <Trophy className="w-6 h-6" />,
+      title: "Top 6 among 1.5 lakh teams in Amazon SMBhav Hackathon",
+      description: "Achieved a top 6 position among 150,000 teams in the Amazon SMBhav Hackathon, demonstrating exceptional problem-solving and innovation skills.",
       category: "Hackathon"
+    },
+    {
+      icon: <Star className="w-6 h-6" />,
+      title: "2nd Place at Tech Titans - Product Launch Competition",
+      description: "We introduced a concept for a new gaming console by Valve, complete with a detailed business strategy. From ideation to execution, this experience was a masterclass in creativity, teamwork, and strategic thinking.",
+      category: "Competition"
+    },
+    {
+      icon: <Medal className="w-6 h-6" />,
+      title: "1st Place in VichaarX - Sustainable Business Development Ideathon",
+      description: "Earned 1st place in the VichaarX competition, a sustainable business development ideathon organized by Geek for Geek BVCOE and Enactus BVCOE!",
+      category: "Competition"
+    },
+    {
+      icon: <Star className="w-6 h-6" />,
+      title: "Regional Finalists in the Smart Car Design Challenge'24",
+      description: "Achieved the status of Regional Finalists in the Smart Car Design Challenge'24 at NXP India AIM!",
+      category: "Competition"
+    },
+    {
+      icon: <Medal className="w-6 h-6" />,
+      title: "Academic Excellence Award in Computer Science at Pinnacle'24",
+      description: "Thrilled to be recognized with the Academic Excellence Award in Computer Science at Pinnacle'24!",
+      category: "Academic"
+    },
+    {
+      icon: <Star className="w-6 h-6" />,
+      title: "Finalist in the Web-D Verse Hybrid Hackathon",
+      description: "Achieved finalist status in the 'Web-D Verse' hybrid hackathon organized by the MLSAC society.",
+      category: "Hackathon"
+    },
+    {
+      icon: <Trophy className="w-6 h-6" />,
+      title: "3rd Place in TechShuttle - Break the Password Competition",
+      description: "Took third place in TechShuttle, Hack Club BVP's latest competition - Break the Password!",
+      category: "Competition"
+    },
+    {
+      icon: <Crown className="w-6 h-6" />,
+      title: "Empowering Future Innovators: A Remarkable WIEStar Journey",
+      description: "As the WIE Chairperson at IEEE BVCOE, I had the privilege of leading initiatives that empower future innovators at Sarvodaya Govt. Vidyalaya!",
+      category: "Leadership"
     },
     {
       icon: <Star className="w-6 h-6" />,
       title: "500+ DSA Problems Solved",
       description: "Successfully solved over 500 Data Structures and Algorithms problems across LeetCode and other platforms, showcasing strong problem-solving skills.",
       category: "Technical"
-    },
-    {
-      icon: <Medal className="w-6 h-6" />,
-      title: "Google Cloud Ready Facilitator",
-      description: "Selected as a Google Cloud Ready Facilitator, helping students learn cloud technologies and achieving all program milestones.",
-      category: "Leadership"
-    },
-    {
-      icon: <Target className="w-6 h-6" />,
-      title: "Microsoft Learn Student Ambassador",
-      description: "Recognized as a Microsoft Learn Student Ambassador for leadership in technology education and community building.",
-      category: "Leadership"
-    },
-    {
-      icon: <Crown className="w-6 h-6" />,
-      title: "Open Source Contributor",
-      description: "Active contributor to various open-source projects, helping improve documentation and adding new features to benefit the developer community.",
-      category: "Technical"
     }
   ];
 
   const certificates = [
     {
-      title: "AWS Cloud Practitioner",
-      issuer: "Amazon Web Services",
-      date: "2023",
-      image: "/certificates/aws-cloud.jpg",
-      link: "#"
+      title: "Coding Ninjas DSA in Java",
+      issuer: "Coding Ninjas",
+      date: "2022",
+      image: "public/1691334711022.jpg", 
+      link: "https://www.linkedin.com/posts/priyanshiguptaa_codingninjas-datastructureandalgorithm-javadeveloper-activity-7093971951303499776-eRYv?utm_source=share&utm_medium=member_desktop" 
     },
     {
-      title: "Google Cloud Digital Leader",
-      issuer: "Google Cloud",
-      date: "2023",
-      image: "/certificates/google-cloud.jpg",
-      link: "#"
+      title: "Machine Learning Challenge Completion",
+      issuer: "Microsoft Learn",
+      date: "2022",
+      image: "public\ml.jpg",
+      link: "https://www.linkedin.com/posts/priyanshiguptaa_learnmicrosoftai-microsoftazure-machinelearning-activity-7096856256799289345-iFjn?utm_source=share&utm_medium=member_desktop"
     },
     {
-      title: "Machine Learning Specialization",
-      issuer: "DeepLearning.AI",
+      title: "Academic Excellence Award in Computer Science at Pinnacle'24",
+      issuer: "Pinnacle'24",
       date: "2023",
-      image: "/certificates/ml-spec.jpg",
-      link: "#"
+      image: "public/pinnacle.jpg",
+      link: "https://www.linkedin.com/posts/priyanshiguptaa_pinnacle24-academicexcellence-gratitude-activity-7194772668364066816-Mzin?utm_source=share&utm_medium=member_desktop"
     },
     {
       title: "React Advanced Concepts",

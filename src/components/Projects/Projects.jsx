@@ -31,13 +31,16 @@ const Projects = () => {
       demo: "#",
       image: "/eeg-interface.jpg"
     },
+    
     {
-      title: "AI Image Generator",
-      description: "Deep learning model to generate artistic images from text descriptions",
-      technologies: ["PyTorch", "Deep Learning", "Computer Vision"],
-      github: "#",
-      demo: "#",
-      image: "/project3.jpg"
+      title: "EV Connects",
+      description: "A project that connects electric vehicle users with charging stations.",
+      technologies: ["React", "Node.js", "Express"],
+      github: "https://github.com/priyanshiiguptaaa/EV_connects",
+      demo: "#", // Add a demo link if available
+      website: "#", // Add a website link if available
+      featured: false, // Set to true if you want to feature this project
+      image: "/path/to/image.jpg" // Replace with the actual image path if available
     }
   ];
 
