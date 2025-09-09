@@ -1,6 +1,13 @@
 // Projects.jsx
-import React, { useRef, useEffect } from 'react';
+import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Mousewheel } from 'swiper/modules';
 import { ExternalLink, Github, Play } from 'lucide-react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 const projects = [
   {
@@ -42,48 +49,13 @@ const projects = [
 ];
 
 const Projects = () => {
-  const carouselRef = useRef();
-
-  useEffect(() => {
-    const container = carouselRef.current;
-    if (!container) return;
-
-    let animationId;
-    let translateX = 0;
-    const speed = 0.5; // pixels per frame
-    const cards = container.children;
-    const cardWidth = 400; // 384px width + 32px gap
-    const totalWidth = cardWidth * projects.length;
-
-    const animate = () => {
-      translateX -= speed;
-      
-      // Reset position when half the carousel has moved (since we duplicated cards)
-      if (Math.abs(translateX) >= totalWidth) {
-        translateX = 0;
-      }
-      
-      container.style.transform = `translateX(${translateX}px)`;
-      animationId = requestAnimationFrame(animate);
-    };
-
-    // Start animation after a short delay
-    const timeoutId = setTimeout(() => {
-      animationId = requestAnimationFrame(animate);
-    }, 1000);
-
-    return () => {
-      if (animationId) cancelAnimationFrame(animationId);
-      if (timeoutId) clearTimeout(timeoutId);
-    };
-  }, []);
-
   return (
-    <section id="projects" className="py-20 relative overflow-hidden bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
+    <section id="projects" className="py-20 relative overflow-hidden">
       {/* Background decorations */}
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-violet-50/5 to-background dark:from-background dark:via-purple-900/5 dark:to-background"></div>
       <div className="absolute inset-0">
-        <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-violet-200 dark:bg-violet-800 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
-        <div className="absolute bottom-1/4 left-1/4 w-64 h-64 bg-purple-200 dark:bg-purple-800 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-violet-700/5 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
+        <div className="absolute bottom-1/4 left-1/4 w-64 h-64 bg-purple-700/5 rounded-full mix-blend-multiply filter blur-xl animate-pulse" style={{ animationDelay: '2s' }}></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
@@ -91,23 +63,91 @@ const Projects = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-violet-700 dark:text-purple-400">
             My Projects
           </h2>
-          <div className="h-px flex-1 bg-gradient-to-r from-transparent via-violet-300 to-transparent dark:via-purple-400 ml-8"></div>
+          <div className="h-px flex-1 bg-gradient-to-r from-violet-700/0 via-violet-700/50 to-violet-700/0 dark:from-purple-400/0 dark:via-purple-400/50 dark:to-purple-400/0 ml-8"></div>
         </div>
 
-        <div className="relative w-full overflow-hidden">
-          <div className="flex gap-8 transition-transform duration-1000 ease-linear" ref={carouselRef}>
-            {[...projects, ...projects].map((project, index) => (
-              <ProjectCard key={`${project.title}-${index}`} project={project} />
+        {/* Swiper Container */}
+        <div className="relative">
+          <Swiper
+            modules={[Navigation, Pagination, Mousewheel]}
+            spaceBetween={24}
+            slidesPerView="auto"
+            mousewheel={{
+              forceToAxis: true,
+              sensitivity: 1,
+              releaseOnEdges: true
+            }}
+            navigation={{
+              nextEl: '.swiper-button-next-custom',
+              prevEl: '.swiper-button-prev-custom',
+            }}
+            pagination={{
+              clickable: true,
+              dynamicBullets: true,
+            }}
+            breakpoints={{
+              640: {
+                slidesPerView: 1,
+                spaceBetween: 20,
+              },
+              768: {
+                slidesPerView: 2,
+                spaceBetween: 24,
+              },
+              1024: {
+                slidesPerView: 3,
+                spaceBetween: 32,
+              },
+              1280: {
+                slidesPerView: 3.5,
+                spaceBetween: 32,
+              },
+            }}
+            className="!pb-12"
+          >
+            {projects.map((project, index) => (
+              <SwiperSlide key={index} className="!w-96">
+                <ProjectCard project={project} />
+              </SwiperSlide>
             ))}
-          </div>
+          </Swiper>
+
+          {/* Custom Navigation Buttons */}
+          <button className="swiper-button-prev-custom absolute left-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white dark:bg-gray-800 rounded-full shadow-lg flex items-center justify-center text-violet-700 dark:text-purple-400 hover:bg-violet-50 dark:hover:bg-gray-700 transition-colors duration-300">
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          <button className="swiper-button-next-custom absolute right-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white dark:bg-gray-800 rounded-full shadow-lg flex items-center justify-center text-violet-700 dark:text-purple-400 hover:bg-violet-50 dark:hover:bg-gray-700 transition-colors duration-300">
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
         </div>
       </div>
+
+      {/* Custom Swiper Styles */}
+      <style jsx>{`
+        .swiper-pagination-bullet {
+          background: rgb(124 58 237 / 0.3);
+          opacity: 1;
+        }
+        .swiper-pagination-bullet-active {
+          background: rgb(124 58 237);
+        }
+        .dark .swiper-pagination-bullet {
+          background: rgb(196 181 253 / 0.3);
+        }
+        .dark .swiper-pagination-bullet-active {
+          background: rgb(196 181 253);
+        }
+      `}</style>
     </section>
   );
 };
 
 const ProjectCard = ({ project }) => (
-  <div className="group w-96 flex-shrink-0 relative bg-white dark:bg-gray-800/50 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 backdrop-blur-sm transform hover:scale-[1.02]">
+  <div className="group h-full relative bg-white dark:bg-gray-800/50 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 backdrop-blur-sm transform hover:scale-[1.02]">
     <div className="absolute inset-0 bg-gradient-to-br from-violet-700/10 to-purple-400/10 dark:from-violet-700/20 dark:to-purple-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
     
     {/* Project Image */}
@@ -140,12 +180,12 @@ const ProjectCard = ({ project }) => (
     </div>
 
     {/* Content */}
-    <div className="relative p-6">
+    <div className="relative p-6 flex flex-col h-[calc(100%-12rem)]">
       <h3 className="text-xl font-bold mb-3 text-violet-700 dark:text-purple-400">
         {project.title}
       </h3>
       
-      <p className="text-gray-600 dark:text-gray-300 mb-4 text-sm h-20 overflow-y-auto">
+      <p className="text-gray-600 dark:text-gray-300 mb-4 text-sm leading-relaxed flex-grow">
         {project.description}
       </p>
 
@@ -162,7 +202,7 @@ const ProjectCard = ({ project }) => (
       </div>
 
       {/* Links */}
-      <div className="flex gap-3">
+      <div className="flex gap-3 mt-auto">
         {project.github && (
           <ProjectLink 
             href={project.github} 
@@ -194,7 +234,7 @@ const ProjectLink = ({ href, icon, label }) => (
     href={href}
     target="_blank"
     rel="noopener noreferrer"
-    className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-violet-100 text-violet-700 hover:bg-violet-200 dark:bg-purple-400/20 dark:text-purple-300 dark:hover:bg-purple-400/30 transition-colors duration-300 text-sm font-medium"
+    className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-violet-100 text-violet-700 hover:bg-violet-200 dark:bg-purple-400/10 dark:text-purple-400 dark:hover:bg-purple-400/20 transition-colors duration-300 text-sm font-medium"
   >
     {icon}
     {label}
