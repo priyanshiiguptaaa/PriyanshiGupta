@@ -14,6 +14,7 @@ const Experience = () => {
           "Built an automated telecalling agent to streamline communication processes.",
           "Integrated full-stack solutions to support AI-driven applications."
         ],
+      
         skills: ["AI", "Fullstack", "Chatbot", "Telecalling"],
         link: "https://paytm.com/"
       },
