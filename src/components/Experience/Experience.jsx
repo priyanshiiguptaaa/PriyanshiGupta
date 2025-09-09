@@ -10,7 +10,9 @@ const Experience = () => {
         location: "Noida",
         period: "July 2025 - August 2025",
         description: [
-          "Worked on a chatbot and an automated telecalling agent"
+          "Developed an AI-powered chatbot to enhance customer interactions.",
+          "Built an automated telecalling agent to streamline communication processes.",
+          "Integrated full-stack solutions to support AI-driven applications."
         ],
         skills: ["AI", "Fullstack", "Chatbot", "Telecalling"],
         link: "https://paytm.com/"
