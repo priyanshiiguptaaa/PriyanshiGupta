@@ -17,6 +17,18 @@ const Experience = () => {
       link: "https://www.intel.com/"
     },
     {
+      title: "AI Developer",
+      company: "INTEL",
+      location: "Remote",
+      period: "May 2025 – July 2025",
+      description: [
+        "Engineered a multimodal AI assistant using OpenVINO, achieving a 40% increase in processing speed and reduced latency for both visual and audio inputs, while enhancing UI/UX for a seamless, cross-platform user experience.",
+        "Streamlined model deployment workflows with OpenVINO Toolkit, cutting deployment time by 30%, which accelerated project delivery and enabled scalable integration across multiple application domains."
+      ],
+      skills: ["OpenVINO", "AI", "UI/UX", "Model Deployment"],
+      link: "https://www.intel.com/"
+    },
+    {
       title: "Web Developer (Backend)",
       company: "Paytm",
       location: "India",
